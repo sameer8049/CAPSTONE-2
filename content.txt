@@ -1,0 +1,29 @@
+Mistral-7B-Instruct model. It allows users to have a chat-like interaction with the AI, and the model can answer questions based on the provided documents (in PDF format)
+
+def create_conversational_chain:
+    LlamaCpp:
+
+    LlamaCpp is likely a part of the Langchain library or another custom library in your project. This component appears to be responsible for handling language modeling and text generation.
+    It takes various parameters, including model_path, temperature, top_p, verbose, and n_ctx, which are used to configure the behavior of the language model.
+    model_path is the path to the pre-trained language model you're using, which seems to be "mistral-7b-instruct-v0.1.Q3_K_M.gguf."
+
+    temperature=temperature" is a hyperparameter that affects the randomness and diversity of the generated text. It controls the level of randomness in the output.
+        A higher temperature value (e.g., 1.0 or greater) results in more diverse and random text generation.
+        A lower temperature value (e.g., 0.2 or lower) makes the text generation more deterministic and focused.
+
+    top_p=1:
+    The top_p parameter, also known as "nucleus sampling" or "penalty for low probability tokens," is a hyperparameter used in text generation with language models like GPT-3.
+    A value of 1 means that all tokens are considered during text generation. It doesn't exclude any tokens based on their probability distribution.
+    Setting top_p to 1 ensures that all tokens, including less likely ones, are considered for text generation. This can result in more diverse text output.
+
+    n_ctx=4096:
+
+    The n_ctx parameter specifies the maximum context length for the language model. It determines how much context the model can consider when generating text.
+    In this case, a value of 4096 means that the model can take into account a context window of 4096 tokens when generating text. This allows the model to consider a substantial amount of preceding text to ensure contextually relevant responses.
+
+    chain = ConversationalRetrievalChain.from_llm(llm=llm, chain_type='stuff',
+                                                 retriever=vector_store.as_retriever(search_kwargs={"k": 2}),
+                                                 memory=memory)
+    retriever=vector_store.as_retriever(search_kwargs={"k": 2}): It configures a retriever component for the chain. The retriever is used to search for relevant information or responses based on user queries. It appears to use the vector_store (likely a vector-based storage system) as a retriever with specific search parameters. The {"k": 2} parameter suggests that the retriever might retrieve the top 2 most relevant responses.
+
+    The memory variable likely contains a configuration for conversation history management, which stores previous user queries and the chatbot's responses.
