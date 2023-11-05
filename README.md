@@ -1,3 +1,2 @@
-# theming-showcase
-
-This is an example app showcasing how to use themes in [Streamlit](https://streamlit.io/). See the app live [here](https://share.streamlit.io/streamlit/theming-showcase/main). For more info, check out our [docs](https://docs.streamlit.io/en/stable/main_concepts.html#themes) and [blog post](https://blog.streamlit.io/introducing-theming/).
+# i am not going to upload mistral-7b model here because of size, you can the given link to download from hugging face 
+## https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/tree/main
